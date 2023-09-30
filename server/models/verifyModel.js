@@ -19,6 +19,6 @@ const verifySchema = new mongoose.Schema({
 }, { timestamps: true })
 
 
-verifySchema.index({createdAt: 1},{expireAfterSeconds: 1800});
-module.exports = mongoose.model('VerifySchema', verifySchema);
+verifySchema.index({createdAt: 1},{expireAfterSeconds: 3000});
+module.exports = mongoose.model('Verify', verifySchema);
 
