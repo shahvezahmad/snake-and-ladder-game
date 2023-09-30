@@ -1,7 +1,6 @@
 const nodemailer = require("nodemailer");
 const Verify = require('../models/verifyModel');
 const User = require('../models/registerModel');
-
 require('dotenv').config();
 const Mailgen = require('mailgen');
 

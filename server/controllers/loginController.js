@@ -3,7 +3,6 @@ const StatusCodes = require("http-status-codes");
 
 const login = async (req, res) => {
     try {
-        const body = { ...req.body }
         const { email, password } = req.body
         const user = await User.findOne({ email })
         const isPasswordCorrect = await user.comparePassword(password)
@@ -13,7 +12,7 @@ const login = async (req, res) => {
                 return res.status(401).json({ msg:"PLEASE VERIFY YOUR EMAIL FIRST" })
             }
             else{
-                return res.status(201).json({msg:"OK"});
+                return res.status(201).json({msg:"Login Sucessful"});
             }
         }
         else {
