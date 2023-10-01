@@ -1,0 +1,48 @@
+
+.head {
+    font-size: 30px;
+    justify-content: center;
+    text-align: left;
+}
+
+.align-centre {
+    text-align: justify;
+
+}
+
+.centre {
+    text-align: center;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: -5px;
+}
+
+.rform {
+    background-color: aliceblue;
+    padding-left: 3px;
+    font-size: 18px;
+    border-radius: 0.2rem;
+}
+
+.btnr {
+    border-color: red;
+    border: solid 1px rgb(4, 255, 108);
+    transition: 500ms;
+}
+
+.btnr:hover {
+    box-shadow: 10px;
+    transform: scale(1.1);
+    transition: 500ms;
+    background-color: rgb(185, 232, 255);
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 550px) {
+    .shows {
+        display: none;
+    }
+}
