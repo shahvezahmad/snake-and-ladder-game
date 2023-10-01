@@ -2,7 +2,6 @@ import React from 'react';
 import "./Login.css";
 import Header from "../Header/Header"
 import Register from "../Register/Register";
-import Footer from "./Footer"
 const Login = () => {
 
   return (
