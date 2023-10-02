@@ -20,5 +20,5 @@ const verifySchema = new mongoose.Schema({
 
 
 verifySchema.index({createdAt: 1},{expireAfterSeconds: 3000});
-module.exports = mongoose.model('Verify', verifySchema);
+module.exports = mongoose.model('VerifyRegister', verifySchema);
 
