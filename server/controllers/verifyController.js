@@ -1,7 +1,9 @@
 const nodemailer = require("nodemailer");
-const Verify = require('../models/verifyModel');
-const User = require('../models/registerModel');
+const User = require('../models/verifyModel');
+const UserR = require('../models/registerModel');
+
 require('dotenv').config();
+
 const Mailgen = require('mailgen');
 
 const report = async (req, res) => {
@@ -13,9 +15,9 @@ const report = async (req, res) => {
     }
     try {
         try {
-            const uu = await User.findOne({ email: email });
+            const uu = await UserR.findOne({ email: email });
             if (!uu) {
-                const Users = await User.create({
+                const Users = await UserR.create({
                     username: name,
                     email: email,
                     password: password,
@@ -29,8 +31,8 @@ const report = async (req, res) => {
                     return res.status(401).json({ msg: true });
                 }
                 else {
-                await User.deleteOne({email:email});
-                var Users = await User.create({
+                await UserR.deleteOne({email:email});
+                var Users = await UserR.create({
                     username: name,
                     email: email,
                     password: password,
@@ -44,9 +46,9 @@ const report = async (req, res) => {
             res.status(401).json({ msg: error })
         }
         try {
-            var Users2 = await Verify.findOne({ mail: email })
+            var Users2 = await User.findOne({ mail: email })
             if(!Users2){
-                Users2 = await Verify.create({ mail: email, token: str })
+                Users2 = await User.create({ mail: email, token: str })
             }
             else{
                 mail = email;
@@ -107,13 +109,15 @@ const verifyLink = async (req, res) => {
     const email = req.params.email
     try {
 
-        await Verify.find({ token: id }, async (err, docs) => {
+        await User.find({ token: id }, async (err, docs) => {
             if (err) {
                 console.log(err);
             }
             else {
-                await Verify.updateOne({ token: id }, { isVerify: true })
-                const user1 = User.findOne({ email: email })
+                console.log(id);
+                console.log(email);
+                await User.updateOne({ token: id }, { isVerify: true })
+                const user1 = UserR.findOne({ email: email })
                 await user1.updateOne({ email: email }, { verify: true })
                 return res.status(201).end("Successfully Verified")
             }
