@@ -4,7 +4,7 @@ const routes = require("./routes/Route");
 const helmet = require('helmet');
 const cors=require("cors");
 const errorHandlerMiddleware = require('./middleware/errorHandler');
-
+const xss=require("xss-clean");
 //create server
 const app = express();
 
@@ -19,6 +19,7 @@ connectWithDb();
 app.use(express.json());
 app.use(helmet());
 app.use(cors());
+app.use(xss());
 app.set('trust proxy', 1);
 
 //use Routes
