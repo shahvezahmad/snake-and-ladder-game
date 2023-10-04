@@ -13,6 +13,11 @@ HTML/CSS: Markup and styling for the website. <br/>
 JavaScript: Programming language used for client-side and server-side scripting. <br/>
 TailwindCSS: CSS framework to provide a comprehensive set of pre-built classes.
 
+## Hosting
+
+Frontend: Netlify <br/>
+Backend: Render <br/>
+
 ## Installation and Setup
 
 1. Clone the repository:
