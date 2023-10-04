@@ -3,7 +3,6 @@ require("dotenv").config();
 const routes = require("./routes/Route");
 const helmet = require('helmet');
 const cors=require("cors");
-const errorHandlerMiddleware = require('./middleware/errorHandler');
 const xss=require("xss-clean");
 //create server
 const app = express();
@@ -25,8 +24,6 @@ app.set('trust proxy', 1);
 //use Routes
 app.use("/api/v1",routes);
 
-// use Middlewares
-app.use(errorHandlerMiddleware);
 
 app.listen(PORT, ()=>{
     console.log("server started");
