@@ -95,14 +95,11 @@ const Register = () => {
                 To Finish the game, player have to reach 100
               </li>
               <li>
-                If you get "6" on the die then you will get one more chance
-              </li>
-              <li>
-                Player to reach 100 will win the game
-              </li>
-              <li>
                 Tip: Player can climb the ladder and snake can eat the player
               </li> 
+              <li>
+                Multiplayer functionality, allowing a maximum of 4 players to play together
+              </li>
             </ul>
           </div>
         </div>
