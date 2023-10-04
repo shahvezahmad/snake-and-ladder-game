@@ -18,7 +18,7 @@ MongoDB: A NoSQL database used for data storage. <br/>
 Nodemailer: A module for sending emails from Node.js applications. <br/>
 
 ## Usage
-explore the codebase to understand the API endpoints and their functionalities. <br/>
+Explore the codebase to understand the API endpoints and their functionalities. <br/>
 Register a user account using the registration API endpoint. <br/>
 Log in with the registered account using the login API endpoint. <br/>
 Utilize the various game-related API endpoints to perform game actions, such as starting a new game, saving game progress, retrieving game data, etc. <br/>
