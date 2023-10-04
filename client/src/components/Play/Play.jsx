@@ -1,37 +1,46 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react';
 import { AiTwotonePlusSquare, AiFillGitlab, AiTwotoneDownCircle, AiFillHeart } from "react-icons/ai"
 import Home from '../Home/Home';
 import Winner from '../Winner/Winner';
 
 const Play = ({ start, slide1 }) => {
-    var ashow = [1, 2, 3, 4];
-    var [n1, cn1] = React.useState(eval(localStorage.getItem("n1")));
-    var [n2, cn2] = React.useState(eval(localStorage.getItem("n2")));
-    var [n3, cn3] = React.useState(eval(localStorage.getItem("n3")));
-    var [n4, cn4] = React.useState(eval(localStorage.getItem("n4")));
-    var [ben, cben] = React.useState(true);
-    var [cnm, ccnm] = React.useState(Math.floor(Math.random() * (6 - 1 + 1)) + 1);
-    var [dcss, cdcss] = React.useState(true);
-    var [result, cresult] = React.useState(false);
-    var [victor, cvictor] = React.useState(0);
-    var [pointer, cpointer] = React.useState(0);
-    var arrchoice = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6];
-    // var arrchoice = [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6];
 
-    var snakeh = [80, 29, 88, 99];
-    var snakee = [45, 6, 36, 34];
-    var ladderh = [96, 62, 47];
-    var laddere = [31, 39, 24];
-    React.useEffect(() => {
+    const ashow = [1, 2, 3, 4];
+    // n1, n2, n3, n4 represents current positions of player 1,2,3,4 respectively
+    const [n1, cn1] = useState(localStorage.getItem("n1"));
+    const [n2, cn2] = useState(localStorage.getItem("n2"));
+    const [n3, cn3] = useState(localStorage.getItem("n3"));
+    const [n4, cn4] = useState(localStorage.getItem("n4"));
+    //whether button can be clicked or not
+    const [ben, cben] = useState(true);
+    //current value of dice
+    const [cnm, ccnm] = useState(Math.floor(Math.random() * (6 - 1 + 1)) + 1);
+    //dice animation
+    const [dcss, cdcss] = useState(true);
+    //whether game has ended or not
+    const [result, cresult] = useState(false);
+    //holds player number who won the game
+    const [victor, cvictor] = useState(0);
+    //represent current player turn
+    const [pointer, cpointer] = useState(0);
+    const arrchoice = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6];
+    //head and tail position of snake
+    const snakeh = [80, 29, 88, 99];
+    const snakee = [45, 6, 36, 34];
+    //top and bottom position of ladder
+    const ladderh = [96, 62, 47];
+    const laddere = [31, 39, 24];
+    
+    useEffect(() => {
         if (start === false) {
             var h1 = localStorage.getItem("n1");
             var h2 = localStorage.getItem("n2");
             var h3 = localStorage.getItem("n3");
             var h4 = localStorage.getItem("n4");
-            cn1(eval(h1));
-            cn2(eval(h2));
-            cn3(eval(h3));
-            cn4(eval(h4));
+            cn1(h1);
+            cn2(h2);
+            cn3(h3);
+            cn4(h4);
             return;
         }
     }, [start])

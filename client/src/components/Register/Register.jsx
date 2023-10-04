@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import './Register.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     
-  var [rpassword, changerp] = React.useState("");
-  var [rname, changern] = React.useState("");
-  var [rpassword2, changerp2] = React.useState("");
-  var [rm, changerm] = React.useState("");
-  var [rpassword3, changerp23] = React.useState("");
-  var [rm3, changerm3] = React.useState("");
-  var [showdd, showd] = React.useState(true);
+  const [rpassword, changerp] = useState("");
+  const [rname, changern] = useState("");
+  const [rpassword2, changerp2] = useState("");
+  const [rm, changerm] = useState("");
+  const [rpassword3, changerp23] = useState("");
+  const [rm3, changerm3] = useState("");
+  const [showdd, showd] = useState(true);
+  const [resetform, setResetForm] = useState(true);
   const signin = async () => {
     if (!rpassword3 || !rm3) {
       toast("All fields are necessary")
@@ -45,6 +46,14 @@ const Register = () => {
     window.location.reload();
   }
 
+  useEffect(() => {
+    changerp("");
+    changern("");
+    changerp2("");
+    changerm("");
+    setResetForm(false);
+  }, [resetform])
+
   const notify = async () => {
     if (!rpassword || !rpassword2 || !rm || !rname) {
       toast("All fields are necessary")
@@ -67,6 +76,7 @@ const Register = () => {
         }
         else {
           toast(`Verify Your Mail....${res.data.datas}`)
+          setResetForm(true);
         }
       })
       .catch((err) => {
@@ -100,6 +110,9 @@ const Register = () => {
               <li>
                 Multiplayer functionality, allowing a maximum of 4 players to play together
               </li>
+              <li>
+                Wait for a few second after clicking register button 
+              </li>
             </ul>
           </div>
         </div>
@@ -111,7 +124,7 @@ const Register = () => {
               className='rform'
               type="text"
               placeholder='Username'
-              onChange={e => { changern(rname = e.target.value) }}
+              onChange={e => { changern(e.target.value) }}
             />
             <label>Enter Your Email</label>
             <input
@@ -119,7 +132,7 @@ const Register = () => {
               placeholder='Email'
               className='rform'
               type="email"
-              onChange={e => { changerm(rm = e.target.value) }}
+              onChange={e => { changerm(e.target.value) }}
             />
             <label>Enter Your Password</label>
             <input
@@ -127,14 +140,14 @@ const Register = () => {
               placeholder='Password'
               className='rform'
               type="password"
-              onChange={e => { changerp(rpassword = e.target.value) }}
+              onChange={e => { changerp(e.target.value) }}
             />
             <label>Confirm Your Password</label>
             <input
               required
               placeholder='Password'
               className='rform'
-              onChange={e => { changerp2(rpassword2 = e.target.value) }}
+              onChange={e => { changerp2(e.target.value) }}
               type="password"
             />
             <button type="button" onClick={notify} className='bg-green-300 font-semibold text-lg max-w-fit px-4 rounded-sm mx-auto mt-4 border-red-300 btnr'>Register</button>
