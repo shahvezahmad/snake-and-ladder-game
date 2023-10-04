@@ -9,7 +9,7 @@ const xss=require("xss-clean");
 const app = express();
 
 //port defined
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 //db connection
 const connectWithDb = require("./config/database");
