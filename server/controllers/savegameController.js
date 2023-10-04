@@ -5,16 +5,16 @@ const StatusCodes = require("http-status-codes");
 const savegame = async (req, res) => {
     try {
         const bod = { ...req.body }
-        var { n1, n2, n3, n4, name, email, slide1, fwd1, fwd2, fwd3, fwd4 } = bod;
+        var { n1, n2, n3, n4, name, email, slide1 } = bod;
         const user = await User.findOne({ email: email });
         var str = user.saved;
         var str2 = ""
         if (str.length > 5) {
 
-            str2 = `,{"name":"${name}","n1":${n1},"n2":${n2},"n3":${n3},"n4":${n4},"slide1":${slide1},"fwd4":${fwd4},"fwd1":${fwd1},"fwd3":${fwd3},"fwd2":${fwd2}}`
+            str2 = `,{"name":"${name}","n1":${n1},"n2":${n2},"n3":${n3},"n4":${n4},"slide1":${slide1}}`
         }
         else {
-            str2 = `{"name":"${name}","n1":${n1},"n2":${n2},"n3":${n3},"n4":${n4},"slide1":${slide1},"fwd4":${fwd4},"fwd1":${fwd1},"fwd3":${fwd3},"fwd2":${fwd2}}`
+            str2 = `{"name":"${name}","n1":${n1},"n2":${n2},"n3":${n3},"n4":${n4},"slide1":${slide1}}`
         }
         var str3 = str.substring(0, str.length - 1);
         str = str3 + str2 + "]";
