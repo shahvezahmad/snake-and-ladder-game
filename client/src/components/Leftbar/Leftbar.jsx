@@ -1,16 +1,11 @@
 import React from 'react';
 import { AiTwotonePlusSquare, AiFillGitlab, AiTwotoneDownCircle, AiFillHeart, } from "react-icons/ai"
 import Play from '../Play/Play';
-import Sidebar1 from '../Sidebar/Sidebar';
 import Rightsidebar from '../Rightbar/Rightbar';
 
 const Leftbar = () => {
     const [slide1, cslide1] = React.useState(localStorage.getItem("slide1"));
     const [start, cstart] = React.useState("true"===localStorage.getItem("start"));
-    const [a, ca] = React.useState(0);
-    const [b, cb] = React.useState(0);
-    const [c, cc] = React.useState(0);
-    const [d, cd] = React.useState(0);
 
     return (
         <>
@@ -62,15 +57,13 @@ const Leftbar = () => {
                             localStorage.setItem("n4", 0);
                             localStorage.setItem("start", !start);
                             localStorage.setItem("slide1", slide1);
-                        }} className={`${!start ? "" : "hidden"} md:hidden text-center flex justify-center w-[100%] bg-green-500 text-slate-200 mt-4 h-[45px] items-center text-2xl hover:scale-110 hover:shadow-lg `}>Start The Game</button>
+                        }} className={`${!start ? "" : "hidden"} md:hidden text-center flex justify-center w-[100%] bg-green-500 text-slate-200 mt-4 h-[45px] items-center text-2xl hover:scale-110 hover:shadow-lg `}>
+                        Start The Game
+                        </button>
                     </form>
-
                 </div>
             </div>
-            <div className='bg-pink-400 text-red-400'>
-                <Sidebar1 />
-            </div>
-            <Play start={start} slide1={slide1} a={a} b={b} c={c} d={d} />
+            <Play start={start} slide1={slide1} />
         </>
     )
 }

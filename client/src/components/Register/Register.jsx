@@ -27,11 +27,6 @@ const Register = () => {
         localStorage.setItem("Verified", true)
         localStorage.setItem("start", false)
         localStorage.setItem("slide1", 1)
-        
-        localStorage.setItem("fwd1", true);
-        localStorage.setItem("fwd2", true);
-        localStorage.setItem("fwd3", true);
-        localStorage.setItem("fwd4", true);
         localStorage.setItem("n1", 0);
         localStorage.setItem("n2", 0);
         localStorage.setItem("n3", 0);
@@ -55,7 +50,7 @@ const Register = () => {
       toast("All fields are necessary")
       return;
     }
-    if (rpassword != rpassword2) {
+    if (rpassword !== rpassword2) {
       toast("Password do not match");
       return;
     }
@@ -94,20 +89,20 @@ const Register = () => {
           <div className=''>
             <ul style={{ listStyleType: "disc" }} className='ml-[10px]'>
               <li>
-                A player can only initiate the game when "1" come on die
+                Snake and ladder Game
+              </li>
+              <li>
+                To Finish the game, player have to reach 100
               </li>
               <li>
                 If you get "6" on the die then you will get one more chance
               </li>
               <li>
-                To Finish the game, player have to reach 100 and then again come back to 0(home)
-              </li>
-              <li>
-                Player to reach the home again will win the game
+                Player to reach 100 will win the game
               </li>
               <li>
                 Tip: Player can climb the ladder and snake can eat the player
-              </li>
+              </li> 
             </ul>
           </div>
         </div>

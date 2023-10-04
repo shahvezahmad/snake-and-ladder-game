@@ -1,0 +1,135 @@
+body {
+  background-color: white;
+}
+
+.box-text {
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  justify-content: center;
+  border: solid 1px rgb(88, 88, 88);
+  height: auto;
+  height: 65px;
+  width: 65px;
+  background-color: rgb(var(--i), var(--j), var(--k));
+}
+
+.hellodd::-webkit-scrollbar {
+  color: black;
+  width: 10px;
+  height: 10px;
+  background-color: greenyellow;
+}
+
+.bgblr {
+
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(96px) saturate(180%);
+  filter: blur(200px)
+}
+
+.text-box {
+  padding: auto auto;
+  font-size: 1.5rem;
+  transition: 400ms;
+  padding-top: 10px;
+}
+
+.box-text:hover {
+  box-shadow: 1px 1px 10px 1px black;
+  transition: 400ms;
+  z-index: 10;
+  transform: scale(1.01);
+}
+
+.hidden {
+  display: none;
+}
+
+.dicecss {
+  color: red;
+  background: linear-gradient(45deg, rgb(253, 86, 86), rgb(215, 32, 32));
+  border-radius: 30px;
+}
+
+.dicecss2 {
+  transform: scale(1.1);
+  transition: ease-in-out;
+  transform: rotateZ(360deg);
+  animation: dicea 2s;
+}
+
+@keyframes dicea {
+  0% {
+    transform: rotateZ(0deg);
+    color: red;
+  }
+
+  50% {
+    color: red ;
+  }
+
+  100% {
+    transform: rotateZ(3600deg);
+
+    color: red;
+  }
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  background-color: pink;
+  width: 650px;
+  height: 650px;
+  margin: auto;
+}
+
+.transitionp {
+  transition: 400ms;
+}
+
+.castbox {
+  position: absolute;
+}
+
+@media screen and (max-width: 1064px) {
+  .home11 {
+    margin-left: 30%;
+  }
+}
+
+@media screen and (max-width: 1006px) {
+
+  .bigd {
+    margin-top: -74%;
+  }
+
+  .imghb {
+    margin-left: -5px;
+    max-height: 554px;
+    max-width: 560px;
+    opacity: 100%;
+  }
+
+  .box-text {
+    text-align: center;
+    margin: auto;
+    padding: auto;
+    justify-content: center;
+    border: solid 1px rgb(88, 88, 88);
+    height: auto;
+    height: 55px;
+    width: 55px;
+    background-color: rgb(var(--i), var(--j), var(--k));
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    background-color: pink;
+    width: 550px;
+    height: 550px;
+    margin: auto;
+  }
+}
