@@ -1,11 +1,11 @@
-import React from 'react'
+import React, {useState, useRef } from 'react'
 import Modal from 'react-modal';
 import source from "../../assets/source.gif";
 
 const Winner = ({ opene, winn, cresult}) => {
 
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-    const subtitleRef = React.useRef();
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const subtitleRef = useRef();
 
     function afterOpenModal() {
         if (subtitleRef.current) {

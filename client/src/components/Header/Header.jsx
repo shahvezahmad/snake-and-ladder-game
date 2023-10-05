@@ -1,12 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import axios from "axios"
 import './Header.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Header = () => {
 
-  var [lusername, changelu] = React.useState("");
-  var [lpassword, changelp] = React.useState("");
+  const [lusername, setlUsername] = useState("");
+  const [lpassword, setlPassword] = useState("");
   const signin = async (e) => {
     e.preventDefault()
     if (!lpassword || !lusername) {
@@ -47,14 +47,14 @@ const Header = () => {
               className='from-input-login-main white'
               type="email"
               placeholder='Email'
-              onChange={e => changelu(lusername = e.target.value)}
+              onChange={e => setlUsername(e.target.value)}
               value={lusername}
             />
             <input
               className='white from-input-login-main'
               type="password"
               placeholder='Password'
-              onChange={e => changelp(lpassword = e.target.value)}
+              onChange={e => setlPassword(e.target.value)}
               value={lpassword}
             />
             <button type="submit" className='text-slate-200 bg-blue-500 px-4 rounded-sm h-[30px] gap-3 ' onClick={(e)=>signin(e)}>Sign In</button>
