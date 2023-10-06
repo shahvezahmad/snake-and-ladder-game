@@ -111,7 +111,7 @@ const Register = () => {
                 Multiplayer functionality, allowing a maximum of 4 players to play together
               </li>
               <li>
-                Wait for a few second after clicking register button 
+                Register with a valid email, click the link sent to your email for verification, then log in to play the game.
               </li>
             </ul>
           </div>
@@ -129,7 +129,7 @@ const Register = () => {
             <label>Enter Your Email</label>
             <input
               required
-              placeholder='Email'
+              placeholder='Valid Email'
               className='rform'
               type="email"
               onChange={e => { changerm(e.target.value) }}
@@ -137,7 +137,7 @@ const Register = () => {
             <label>Enter Your Password</label>
             <input
               required
-              placeholder='Password'
+              placeholder='Password (>5)'
               className='rform'
               type="password"
               onChange={e => { changerp(e.target.value) }}
