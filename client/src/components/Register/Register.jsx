@@ -111,7 +111,12 @@ const Register = () => {
                 Multiplayer functionality, allowing a maximum of 4 players to play together
               </li>
               <li>
-                Register with a valid email, click the link sent to your email for verification, then log in to play the game.
+                Register with a valid email, click the link sent to your email for verification, <br/> then log in to play the game.
+              </li>
+              <li>
+                Test: <br/>
+                Email: shahvezahmad5786@gmail.com <br/>
+                Password: shahvez
               </li>
             </ul>
           </div>
